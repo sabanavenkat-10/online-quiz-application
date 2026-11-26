@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1>Welcome to the Quiz!</h1>
+                <p>Test your knowledge with our interactive quiz</p>
+                <div class="input-group">
+                    <label for="username">Enter your name:</label>
+                    <input type="text" id="username" placeholder="Your name" required>
+                </div>
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-counter">Question 1 of 10</span>
+                    <span id="timer">Time: 00:00</span>
+                </div>
+            </div>
+
+            <div class="quiz-body">
+                <h2 id="question">Question will appear here</h2>
+                <div id="options" class="options">
+                    <!-- Options will be inserted here dynamically -->
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h1>Quiz Completed!</h1>
+                <div class="results-details">
+                    <p class="user-name">Well done, <span id="result-username"></span>!</p>
+                    <div class="score-circle">
+                        <div class="score-value">
+                            <span id="score">0</span>
+                            <span class="total">/10</span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Correct Answers</span>
+                            <span class="stat-value" id="correct-answers">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Wrong Answers</span>
+                            <span class="stat-value" id="wrong-answers">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Time Taken</span>
+                            <span class="stat-value" id="time-taken">00:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Percentage</span>
+                            <span class="stat-value" id="percentage">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button id="review-btn" class="btn btn-secondary">Review Answers</button>
+                    <button id="restart-btn" class="btn btn-primary">Restart Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Screen -->
+        <div id="review-screen" class="screen">
+            <div class="review-content">
+                <h1>Answer Review</h1>
+                <div id="review-list" class="review-list">
+                    <!-- Review items will be inserted here -->
+                </div>
+                <button id="back-to-results-btn" class="btn btn-primary">Back to Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
